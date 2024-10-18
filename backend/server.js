@@ -12,7 +12,9 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
+const studentRouter = require('./routes/StudentRoutes');
 
+app.use('/student',studentRouter)
 
   mongoose
   .connect(process.env.MONGO_URI)
