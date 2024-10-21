@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+
 import './App.css';
+import AddStudent from './components/AddStudent';
+import CounterClass from './components/CounterClass';
+import CounterFunction from './components/CounterFunction';
+import AllStudents from './components/AllStudents';
+import Header from './components/Header';
+import {BrowserRouter as Router, Route} from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+      <Header/>
+      <Route path='/add' exact component={AddStudent} />
+      <Route path='/' exact component={AllStudents} />
+
+      </div>
+    </Router>
+    
   );
 }
 
